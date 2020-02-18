@@ -69,42 +69,48 @@ function App() {
     event.preventDefault();
   };
 
-  console.log(display.validation);
-  console.log(display.welcome);
-  console.log(display.cryptograph);
-  console.log(display.complete);
-
   return (
     <div className="App">
-      <header className="App-header"></header>
+      <header className="App-header">I am a header</header>
 
       <section id="validation" className={display.validation}>
-        <form onSubmit={validate}>
-          <input id="fname" type="text" placeholder="first name" />
-          <input id="bday" type="date" />
-          <input type="submit" value="enter" />
-        </form>
+        <div className="content">
+          <form onSubmit={validate}>
+            <h3>first name</h3>
+            <input id="fname" type="text" />
+            <h3>birthday</h3>
+            <input id="bday" type="date" />
+            <br />
+            <input className="submit" type="submit" value=">" />
+          </form>
+        </div>
       </section>
 
       <section id="welcome" className={display.welcome}>
-        <form onSubmit={start}>
-          <h2>Welcome Peach,</h2>
-          <h3>there are {data.length} puzzles to solve.</h3>
-          <h2>Good luck!</h2>
-          <input type="submit" value=">" />
-        </form>
+        <div className="content">
+          <form onSubmit={start}>
+            <h2>welcome peach,</h2>
+            <h3>there are {data.length} puzzles to solve.</h3>
+            <h2>good luck!</h2>
+            <input className="submit" type="submit" value=">" />
+          </form>
+        </div>
       </section>
 
       <section id="cryptograph" className={display.cryptograph}>
-        <form onSubmit={check}>
-          <h2 id="ciphertext">{data[progress].ciphertext}</h2>
-          <input id="plaintext" type="text" />
-          <input type="submit" value=">" />
-        </form>
+        <div className="content">
+          <form onSubmit={check}>
+            <h2 id="ciphertext">{data[progress].ciphertext}</h2>
+            <input id="plaintext" type="text" />
+            <input className="submit" type="submit" value=">" />
+          </form>
+        </div>
       </section>
 
       <section id="complete" className={display.complete}>
-        <h3>Thanks Peach, you too!</h3>
+        <div className="content">
+          <h3>thanks peach, you too!</h3>
+        </div>
       </section>
     </div>
   );
